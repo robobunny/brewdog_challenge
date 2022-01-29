@@ -22,3 +22,30 @@ Use:
 
 Results sorted by ABV, in descending order
 
+## Scratch Pad / Brainstorm / Showing my work
+
+### shape of data
+
+API returns array of:
+
+```js
+beer: {
+    name: String,
+    tagline: String,
+    description: String,
+    image_url: String,
+    abv: Number,
+    ibu: Number,
+    ingredients: Object {
+        malt: Array[Object],
+        hops: Array[Object {
+            ...
+            add: String, // =='dry hop' for beer is dry-hopped,
+        }],
+    },
+    method: Object {
+        twist: String, // match '/lactose/i' to find beer contains lactose
+    },
+}
+```
+
