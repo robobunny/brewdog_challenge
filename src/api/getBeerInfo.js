@@ -1,18 +1,41 @@
-import _ from 'lodash';
+import _ from "lodash";
+import { settings } from "./index";
 
-const displayFields = 'name tagline description image_url abv ibu ingredients method'
-    .split(' ');
+let { brewdogApiUrl, neededBeerFields } = settings;
 
-export default async function getBeerInfo () {
-    const brewdogApiUrl = 'https://api.punkapi.com/v2/beers?per_page=80&start=80';
-    const res = await fetch(brewdogApiUrl,
-        {method: 'GET', mode: 'cors', redirect: 'follow'});
+export default async function getBeersInfo() {
+    try {
+        const data = await fetchBeersInfo();
+        return data.map(parseBeerInfo);
+    } catch (e) {
+        return [];
+    }
+}
+
+async function fetchBeersInfo() {
+    const res = await fetch(brewdogApiUrl, {
+        method: "GET",
+        mode: "cors",
+        redirect: "follow",
+    });
     if (!res.ok) {
-        throw new Error('There was a problem requesting the data, '
-            +'please try again later.');
+        throw new Error(
+            "There was a problem requesting the data, " +
+                "please try again later."
+        );
     }
     try {
-        const parsed = await res.json();
-        return parsed.map(beer=>_.pick(beer, displayFields));
-    } catch (e) { throw e };
-};
+        return await res.json();
+    } catch (e) {
+        throw new Error(`Couldn't parse json response: ${e}`);
+    }
+}
+
+function parseBeerInfo(beer) {
+    beer = _.pick(beer, neededBeerFields);
+    beer.isDryHopped = beer.ingredients?.hops?.some((h) => h.add == "dry hop");
+    beer.isLactose = !!beer.method?.twist?.match(/lactose/i);
+    delete beer.ingredients;
+    delete beer.method;
+    return beer;
+}
