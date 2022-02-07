@@ -3,20 +3,20 @@
     "name": "Buzz",
     "tagline": "A Real Bitter Experience.",
     "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
-    "image_url": "https://images.punkapi.com/v2/keg.png",
+    "imageUrl": "https://images.punkapi.com/v2/keg.png",
     "abv": 4.5,
     "ibu": 60,
     "isDryHopped": false,
-    "isLactose": false
+    "containsLactose": false
   },
   {
     "name": "Trashy Blonde",
     "tagline": "You Know You Shouldn't",
     "description": "A titillating, neurotic, peroxide punk of a Pale Ale. Combining attitude, style, substance, and a little bit of low self esteem for good measure; what would your mother say? The seductive lure of the sassy passion fruit hop proves too much to resist. All that is even before we get onto the fact that there are no additives, preservatives, pasteurization or strings attached. All wrapped up with the customary BrewDog bite and imaginative twist.",
-    "image_url": "https://images.punkapi.com/v2/2.png",
+    "imageUrl": "https://images.punkapi.com/v2/2.png",
     "abv": 4.1,
     "ibu": 41.5,
     "isDryHopped": false,
-    "isLactose": false
+    "containsLactose": false
   }
 ]

@@ -5,13 +5,13 @@ export const testBeer = {
     imageUrl: 'www.example.com/img/PBR',
     abv: 10.0,
     ibu: 73,
-    isLactose: false,
+    containsLactose: false,
     isDryHopped: false,
 };
 
 export const lactoseBeer = {
     ...testBeer,
-    isLactose: true,
+    containsLactose: true,
 };
 
 export const dryHopBeer = {

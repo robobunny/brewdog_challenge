@@ -1,15 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import BeerCards from "./components/BeerCards";
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                Beer
-            </header>
+            <header> Beer Info </header>
             <main>
-                Info
+                <BeerCards />
             </main>
+            <footer>Made by Billy Duraney</footer>
         </div>
     );
 }

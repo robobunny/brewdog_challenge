@@ -1,7 +1,7 @@
 import _ from "lodash";
-import { settings } from "./index";
+import { settings } from "./settings";
 
-let { brewdogApiUrl, neededBeerFields } = settings;
+const { brewdogApiUrl, neededBeerFields } = settings;
 
 export default async function getBeersInfo() {
     try {
@@ -34,7 +34,9 @@ async function fetchBeersInfo() {
 function parseBeerInfo(beer) {
     beer = _.pick(beer, neededBeerFields);
     beer.isDryHopped = beer.ingredients?.hops?.some((h) => h.add == "dry hop");
-    beer.isLactose = !!beer.method?.twist?.match(/lactose/i);
+    beer.containsLactose = !!beer.method?.twist?.match(/lactose/i);
+    beer.imageUrl = beer.image_url;
+    delete beer.image_url;
     delete beer.ingredients;
     delete beer.method;
     return beer;

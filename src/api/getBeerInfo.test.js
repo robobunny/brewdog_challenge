@@ -1,7 +1,7 @@
 import getBeerInfo from "./getBeerInfo";
 import fakeBeerInfo from "../__test__/fakeBeerInfo.json";
 import fakeBeerInfoParsed from "../__test__/fakeBeerInfoParsed.json";
-import { settings } from "./index";
+import { settings } from "./settings";
 
 // XXX in real life it's better to use a lib like nock
 Object.defineProperty(global, "fetch", { value: jest.fn() });
@@ -50,7 +50,7 @@ describe("getBeerInfo", () => {
             })),
         });
         let res = await getBeerInfo();
-        for (let beer of res) expect(beer.isLactose).toBe(true);
+        for (let beer of res) expect(beer.containsLactose).toBe(true);
     });
     test("404 -> empty array", async () => {
         mockFetch({ body: "Not Found", status: 404 });
