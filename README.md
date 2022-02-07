@@ -40,17 +40,17 @@ Use:
 
 Results sorted by ABV, in descending order
 
-### Notes about decisions I made and other tools I used
+## Notes about decisions I made and other tools I used
 
-#### Problem solving > display
+### Problem solving > display
 
 I'm aware that the site doesn't look good and isn't very accessibility-friendly or responsive. I'm aware that these are huge design flaws that, in any production-level product, would be unacceptable. I have a finite amount of time for this project and I'm taking a calculated risk that you're less concerned about those sorts of things than about the problem-solving aspects of my code, for example: how many levels of abstraction I'm applying to the problem.
 
-#### Defer
+### Defer
 
 I used an implementation of defer in useDataLoader.test.js that I copied off stackOverflow to save some time. It's not a very difficult pattern but I wanted to be up front about the code not being my own. Obviously in the real world, a tool like this would be its own module with its own tests, a more robust implementation, etc. but I just wanted a bare-bones way to deterministically make a promise resolve at a certain point in the test code.
 
-#### Prettier
+### Prettier
 
 I don't actually like the way it looks, but I used prettier with the default config to format the code so that it's all uniform.
 
@@ -73,6 +73,15 @@ I don't have to ensure that the visual feedback of the page is correct/meaningfu
 ### Follow-up
 
 I was pleased that I was able to code this (admittedly simple) app without opening a browser at all. Only at the very end did I check out what it looked like. By that time I was already sure it would work as intended, because of my tests. I then added some bare bones styles so it didn't look like total garbage.
+
+### Next steps
+
+Here's what my to-do list would look like if I were developing this app further:
+
+- add display filters to find relevant beers
+- add search
+- add pagination
+- improve visuals: colors, animations, etc
 
 ## Scratch Pad / Brainstorm / Showing my work
 
