@@ -59,9 +59,9 @@ I don't actually like the way it looks, but I used prettier with the default con
 I want to show:
 
 - good tests and clear evidence of TDD
--
+- sane amount of abstraction: not too many intermediary components, but not all one huge file
 
-I enjoy doing strict TDD when I can. Sof to for the react components and auxiliary functions (like the one that calls the API),
+I enjoy doing strict TDD when I can. So for the components and functions (like the one that calls the API),
 I'll write the tests first then write the code till the tests pass.
 
 Once I have the components made, I'll render the app in a browser and make sure the CSS looks presentable.
@@ -69,6 +69,10 @@ My goal is not to open a browser at all until the app is basically done.
 This makes iteration way faster than relying on visual feedback for every aspect of development.
 It also helps avoid context switching and focus on solving one problem at a time.
 I don't have to ensure that the visual feedback of the page is correct/meaningful in order to be sure the data handling is working.
+
+### Follow-up
+
+I was pleased that I was able to code this (admittedly simple) app without opening a browser at all. Only at the very end did I check out what it looked like. By that time I was already sure it would work as intended, because of my tests. I then added some bare bones styles so it didn't look like total garbage.
 
 ## Scratch Pad / Brainstorm / Showing my work
 
