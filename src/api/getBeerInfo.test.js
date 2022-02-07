@@ -57,4 +57,12 @@ describe("getBeerInfo", () => {
     let res = await getBeerInfo();
     expect(res).toEqual([]);
   });
+    test("sorts results by ABV in descending order", async ()=>{
+        mockFetch({
+            body: [{name: 'low abv', abv: 3.2}, {name: 'high abv', abv: 12.1}, {name: 'middle abv', abv: 7.1}]
+        });
+        let res = await getBeerInfo();
+        expect(res[0].name).toBe('high abv');
+        expect(res[2].name).toBe('low abv');
+    });
 });
