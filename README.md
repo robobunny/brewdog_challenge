@@ -1,5 +1,23 @@
 # Beer coding challenge
 
+To install the app locally, clone the repo and then:
+
+```bash
+yarn install
+```
+
+To start the dev server:
+
+```bash
+yarn start
+```
+
+To run the tests:
+
+```bash
+yarn test
+```
+
 ## Requirements as I understand them
 
 Display info from BrewDog brewery endpoint: https://api.punkapi.com/v2/beers?per_page=80
@@ -26,7 +44,7 @@ Results sorted by ABV, in descending order
 
 #### Problem solving > display
 
-I'm aware that the site doesn't look that great and isn't very accessibility-friendly or responsive. I'm aware that these are huge design flaws that, in any production-level product, would be unacceptable. I have a finite amount of time for this project and I'm taking a calculated risk that you're less concerned about those sorts of things than about the problem-solving aspects of my code, for example: how many levels of abstraction I'm applying to the problem.
+I'm aware that the site doesn't look good and isn't very accessibility-friendly or responsive. I'm aware that these are huge design flaws that, in any production-level product, would be unacceptable. I have a finite amount of time for this project and I'm taking a calculated risk that you're less concerned about those sorts of things than about the problem-solving aspects of my code, for example: how many levels of abstraction I'm applying to the problem.
 
 #### Defer
 
