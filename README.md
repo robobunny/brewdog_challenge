@@ -28,6 +28,14 @@ Results sorted by ABV, in descending order
 
 I'm aware that the site doesn't look that great and isn't very accessibility-friendly or responsive. I'm aware that these are huge design flaws that, in any production-level product, would be unacceptable. I have a finite amount of time for this project and I'm taking a calculated risk that you're less concerned about those sorts of things than about the problem-solving aspects of my code, for example: how many levels of abstraction I'm applying to the problem.
 
+#### Defer
+
+I used an implementation of defer in useDataLoader.test.js that I copied off stackOverflow to save some time. It's not a very difficult pattern but I wanted to be up front about the code not being my own. Obviously in the real world, a tool like this would be its own module with its own tests, a more robust implementation, etc. but I just wanted a bare-bones way to deterministically make a promise resolve at a certain point in the test code.
+
+#### Prettier
+
+I don't actually like the way it looks, but I used prettier with the default config to format the code so that it's all uniform.
+
 ## My goals for this challenge
 
 I want to show:
@@ -75,102 +83,102 @@ beer: {
 
 ```json
 {
-        "name": "Buzz",
-        "tagline": "A Real Bitter Experience.",
-        "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
-        "image_url": "https://images.punkapi.com/v2/keg.png",
-        "abv": 4.5,
-        "ibu": 60,
-        "ingredients": {
-                "malt": [
-                        {
-                                "name": "Maris Otter Extra Pale",
-                                "amount": {
-                                        "value": 3.3,
-                                        "unit": "kilograms"
-                                }
-                        },
-                        {
-                                "name": "Caramalt",
-                                "amount": {
-                                        "value": 0.2,
-                                        "unit": "kilograms"
-                                }
-                        },
-                        {
-                                "name": "Munich",
-                                "amount": {
-                                        "value": 0.4,
-                                        "unit": "kilograms"
-                                }
-                        }
-                ],
-                "hops": [
-                        {
-                                "name": "Fuggles",
-                                "amount": {
-                                        "value": 25,
-                                        "unit": "grams"
-                                },
-                                "add": "start",
-                                "attribute": "bitter"
-                        },
-                        {
-                                "name": "First Gold",
-                                "amount": {
-                                        "value": 25,
-                                        "unit": "grams"
-                                },
-                                "add": "start",
-                                "attribute": "bitter"
-                        },
-                        {
-                                "name": "Fuggles",
-                                "amount": {
-                                        "value": 37.5,
-                                        "unit": "grams"
-                                },
-                                "add": "middle",
-                                "attribute": "flavour"
-                        },
-                        {
-                                "name": "First Gold",
-                                "amount": {
-                                        "value": 37.5,
-                                        "unit": "grams"
-                                },
-                                "add": "middle",
-                                "attribute": "flavour"
-                        },
-                        {
-                                "name": "Cascade",
-                                "amount": {
-                                        "value": 37.5,
-                                        "unit": "grams"
-                                },
-                                "add": "end",
-                                "attribute": "flavour"
-                        }
-                ],
-                "yeast": "Wyeast 1056 - American Ale™"
-        },
-        "method": {
-                "mash_temp": [
-                        {
-                                "temp": {
-                                        "value": 64,
-                                        "unit": "celsius"
-                                },
-                                "duration": 75
-                        }
-                ],
-                "fermentation": {
-                        "temp": {
-                                "value": 19,
-                                "unit": "celsius"
-                        }
-                },
-                "twist": null
+  "name": "Buzz",
+  "tagline": "A Real Bitter Experience.",
+  "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
+  "image_url": "https://images.punkapi.com/v2/keg.png",
+  "abv": 4.5,
+  "ibu": 60,
+  "ingredients": {
+    "malt": [
+      {
+        "name": "Maris Otter Extra Pale",
+        "amount": {
+          "value": 3.3,
+          "unit": "kilograms"
         }
+      },
+      {
+        "name": "Caramalt",
+        "amount": {
+          "value": 0.2,
+          "unit": "kilograms"
+        }
+      },
+      {
+        "name": "Munich",
+        "amount": {
+          "value": 0.4,
+          "unit": "kilograms"
+        }
+      }
+    ],
+    "hops": [
+      {
+        "name": "Fuggles",
+        "amount": {
+          "value": 25,
+          "unit": "grams"
+        },
+        "add": "start",
+        "attribute": "bitter"
+      },
+      {
+        "name": "First Gold",
+        "amount": {
+          "value": 25,
+          "unit": "grams"
+        },
+        "add": "start",
+        "attribute": "bitter"
+      },
+      {
+        "name": "Fuggles",
+        "amount": {
+          "value": 37.5,
+          "unit": "grams"
+        },
+        "add": "middle",
+        "attribute": "flavour"
+      },
+      {
+        "name": "First Gold",
+        "amount": {
+          "value": 37.5,
+          "unit": "grams"
+        },
+        "add": "middle",
+        "attribute": "flavour"
+      },
+      {
+        "name": "Cascade",
+        "amount": {
+          "value": 37.5,
+          "unit": "grams"
+        },
+        "add": "end",
+        "attribute": "flavour"
+      }
+    ],
+    "yeast": "Wyeast 1056 - American Ale™"
+  },
+  "method": {
+    "mash_temp": [
+      {
+        "temp": {
+          "value": 64,
+          "unit": "celsius"
+        },
+        "duration": 75
+      }
+    ],
+    "fermentation": {
+      "temp": {
+        "value": 19,
+        "unit": "celsius"
+      }
+    },
+    "twist": null
+  }
 }
 ```

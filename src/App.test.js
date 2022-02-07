@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders', () => {
+test("renders", () => {
   render(<App />);
-  const header = screen.getByText(/beer/i);
-  const body = screen.getByText(/info/i);
+  const header = screen.getByText("Beer Info");
+  const footer = screen.getByText("Made by Billy Duraney");
   expect(header).toBeInTheDocument();
-  expect(body).toBeInTheDocument();
+  expect(footer).toBeInTheDocument();
 });
